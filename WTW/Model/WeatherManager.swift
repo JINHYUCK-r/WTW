@@ -8,11 +8,18 @@
 
 import Foundation
 
-struct WeatherManager {
+protocol WeatherManagerDelegate {
+    func didWeatherUpdate(weatherManager: WeatherManager, weather: WeatherModel)
     
+}
+
+struct WeatherManager {
+    //API 불러와서 사용
 let url = "https://api.openweathermap.org/data/2.5/weather?q="
 let appId = "&appid=92863a6e6b49757727ca29249892156c&units=metric" //units=metric은 섭씨로 표현
-
+    var delegate : WeatherManagerDelegate?
+    
+    //데이터불러오기
     func fetchWeather(cityName : String){
     let urlString = "\(url)\(cityName)\(appId)"
     performRequest(urlString: urlString)
@@ -24,7 +31,7 @@ let appId = "&appid=92863a6e6b49757727ca29249892156c&units=metric" //units=metri
         if let url = URL(string: urlString){
             //2. creat session
             let session = URLSession(configuration: .default)
-            //3. fech data
+            //3. fech data , 데이터를 저장
             let task = session.dataTask(with: url) {(data:Data?, response:URLResponse?, error:Error?) in
                 if error != nil{
                     print(error!)
@@ -32,28 +39,38 @@ let appId = "&appid=92863a6e6b49757727ca29249892156c&units=metric" //units=metri
                 }
                 if let safeData = data {
                     let dataString = String(data: safeData, encoding: .utf8)
-                    self.parseJSON(weatherData: safeData)
+                    
+                    if let weather = self.parseJSON(weatherData: safeData){
+                        //딜리게이트 만들어서 정보저장
+                    self.delegate?.didWeatherUpdate(weatherManager: self, weather: weather)
+                    }
                 }
             }
-            //4. start sesiion
+            //4. start session, 저장된 데이터 시작
             task.resume()
         }
     }
-    func parseJSON(weatherData:Data){
-        let decoder = JSONDecoder()
+    //API의 JSON형식의 데이터를 변환
+    func parseJSON(weatherData:Data) -> WeatherModel?{
+        let decoder = JSONDecoder() //decoder json의 데이터를 해독
         do{
-             let decodeedData = try decoder.decode(WeatherData.self, from: weatherData)
-            print(decodeedData.main.temp)
-            print(decodeedData.name)
-            print(decodeedData.weather[0].id)
-            print(decodeedData.weather[0].description)
+            let decodeedData = try decoder.decode(WeatherData.self, from: weatherData)
+            let temp = decodeedData.main.temp
+            let name = decodeedData.name
+            let id = decodeedData.weather[0].id
+            let condition = decodeedData.weather[0].description
+            
+            let weather = WeatherModel(conditionID: id, cityName: name, temperature: temp,condition: condition )
+            return weather
+            
         }catch{
             print(error)
+            //리턴타입이 존재하기때문에 써주어야함
+            return nil
         }
        
         
     }
-        
         
         
     }

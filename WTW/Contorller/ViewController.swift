@@ -20,12 +20,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
      override func viewDidLoad() {
             super.viewDidLoad()
+        weatherManager.delegate=self
         citynameText.delegate = self
+        
         // 키보드에 따라서 화면이 위로 올라가는 코드 1번
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        weatherManager.fetchWeather(cityName : "Taegu" )
     }
     
 // 2번
@@ -51,6 +52,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
        @IBAction func reserchBtn(_ sender: UIButton) {
            citynameText.endEditing(true)
        }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let cityName = citynameText.text{
+            weatherManager.fetchWeather(cityName: cityName)
+        }
+        citynameText.text=""
+    }
 }
+    
+//WeatherManager에서 만든 딜리게이트와 저정된 정보를 뷰컨트롤에서 사용
+extension ViewController : WeatherManagerDelegate{
+    func didWeatherUpdate(weatherManager: WeatherManager, weather: WeatherModel) {
+        
+        DispatchQueue.main.sync {
+            self.iconImage.image = UIImage(systemName: weather.conditionName)
+            self.location.text=weather.cityName
+            self.degree.text=weather.temperatureString
+            self.condition.text=weather.condition
+        }
+    }
+    
+    
+}
+
 
 
