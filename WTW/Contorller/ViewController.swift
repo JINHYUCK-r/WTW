@@ -13,16 +13,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var condition: UILabel!
-    
-    
     @IBOutlet weak var degree: UILabel!
-    
-    
     @IBOutlet weak var citynameText: UITextField!
     
     var weatherManager = WeatherManager()
-    
-    
     
      override func viewDidLoad() {
             super.viewDidLoad()
@@ -30,7 +24,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // 키보드에 따라서 화면이 위로 올라가는 코드 1번
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        weatherManager.fetchWeather(cityName : "Taege" )
+        
+        weatherManager.fetchWeather(cityName : "Taegu" )
     }
     
 // 2번
