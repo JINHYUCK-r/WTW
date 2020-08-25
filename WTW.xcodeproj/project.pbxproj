@@ -16,9 +16,11 @@
 		3CDB2F2224D9596C00EFE899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB2F2024D9596C00EFE899 /* Main.storyboard */; };
 		3CDB2F2424D9596E00EFE899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB2F2324D9596E00EFE899 /* Assets.xcassets */; };
 		3CDB2F2724D9596E00EFE899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB2F2524D9596E00EFE899 /* LaunchScreen.storyboard */; };
+		AD3C0D3513389C635821D7F7 /* Pods_WTW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94DFE75762AA5A26E652ED9 /* Pods_WTW.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CEB4E9A244A9A415EE933A0 /* Pods-WTW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTW.release.xcconfig"; path = "Target Support Files/Pods-WTW/Pods-WTW.release.xcconfig"; sourceTree = "<group>"; };
 		3C16903524E25F9200508BEC /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		3C16903724E27F9800508BEC /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		3C16903924E2898700508BEC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		3CDB2F2324D9596E00EFE899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CDB2F2624D9596E00EFE899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CDB2F2824D9596E00EFE899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		764B902237BB060A9DD364A9 /* Pods-WTW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTW.debug.xcconfig"; path = "Target Support Files/Pods-WTW/Pods-WTW.debug.xcconfig"; sourceTree = "<group>"; };
+		E94DFE75762AA5A26E652ED9 /* Pods_WTW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WTW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +41,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3C0D3513389C635821D7F7 /* Pods_WTW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28240580C478AF8DF08E0135 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E94DFE75762AA5A26E652ED9 /* Pods_WTW.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C16903224E25E3400508BEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +87,8 @@
 			children = (
 				3CDB2F1924D9596C00EFE899 /* WTW */,
 				3CDB2F1824D9596C00EFE899 /* Products */,
+				E43431A41D63C3C4EAED90A3 /* Pods */,
+				28240580C478AF8DF08E0135 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +115,16 @@
 			path = WTW;
 			sourceTree = "<group>";
 		};
+		E43431A41D63C3C4EAED90A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				764B902237BB060A9DD364A9 /* Pods-WTW.debug.xcconfig */,
+				0CEB4E9A244A9A415EE933A0 /* Pods-WTW.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CDB2F2B24D9596E00EFE899 /* Build configuration list for PBXNativeTarget "WTW" */;
 			buildPhases = (
+				F8EDFB2F1270480AE208F59E /* [CP] Check Pods Manifest.lock */,
 				3CDB2F1324D9596C00EFE899 /* Sources */,
 				3CDB2F1424D9596C00EFE899 /* Frameworks */,
 				3CDB2F1524D9596C00EFE899 /* Resources */,
+				F728103D1ABD08A96F43810A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +192,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F728103D1ABD08A96F43810A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WTW/Pods-WTW-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WTW/Pods-WTW-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WTW/Pods-WTW-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8EDFB2F1270480AE208F59E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WTW-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CDB2F1324D9596C00EFE899 /* Sources */ = {
@@ -318,9 +387,11 @@
 		};
 		3CDB2F2C24D9596E00EFE899 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764B902237BB060A9DD364A9 /* Pods-WTW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YHBC49MK9Q;
 				INFOPLIST_FILE = WTW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -335,9 +406,11 @@
 		};
 		3CDB2F2D24D9596E00EFE899 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CEB4E9A244A9A415EE933A0 /* Pods-WTW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YHBC49MK9Q;
 				INFOPLIST_FILE = WTW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

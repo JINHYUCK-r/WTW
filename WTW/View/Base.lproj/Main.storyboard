@@ -59,16 +59,25 @@
                                     <action selector="reserchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fc9-DU-H2d"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG8-91-TzM" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                <rect key="frame" x="20" y="465.5" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.78431372549019607" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bG8-91-TzM" secondAttribute="trailing" constant="20" id="0QK-Dj-say"/>
                             <constraint firstItem="EeP-Tm-hSS" firstAttribute="top" secondItem="7gH-Rd-Toa" secondAttribute="bottom" constant="50" id="1FR-4w-2QU"/>
                             <constraint firstItem="Ik7-wO-iXQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3nO-bl-NdV"/>
                             <constraint firstItem="7gH-Rd-Toa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="56t-dA-uqe"/>
+                            <constraint firstItem="bG8-91-TzM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="58P-r5-nGn"/>
                             <constraint firstItem="fpq-wP-OME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6iA-X4-zrf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ik7-wO-iXQ" secondAttribute="trailing" constant="20" id="986-dr-XT4"/>
                             <constraint firstItem="Ik7-wO-iXQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OFZ-cg-UR4"/>
                             <constraint firstItem="fXa-ln-M4R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Q4e-t2-lme"/>
+                            <constraint firstItem="bG8-91-TzM" firstAttribute="top" secondItem="7gH-Rd-Toa" secondAttribute="bottom" constant="5" id="RO3-RA-axX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EeP-Tm-hSS" secondAttribute="trailing" constant="20" id="SD4-oq-dzL"/>
                             <constraint firstItem="E4v-D5-boX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Utl-0S-6Xy"/>
                             <constraint firstItem="fXa-ln-M4R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yeo-6h-sjl"/>
@@ -89,6 +98,7 @@
                         <outlet property="degree" destination="EeP-Tm-hSS" id="uf6-cp-c1r"/>
                         <outlet property="iconImage" destination="fXa-ln-M4R" id="hc2-dq-sVY"/>
                         <outlet property="location" destination="Ik7-wO-iXQ" id="1ph-Cb-19T"/>
+                        <outlet property="myTypeWriterLabel" destination="bG8-91-TzM" id="Ue9-bC-LXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

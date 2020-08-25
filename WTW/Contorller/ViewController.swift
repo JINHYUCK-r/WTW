@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CLTypingLabel
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -15,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var condition: UILabel!
     @IBOutlet weak var degree: UILabel!
     @IBOutlet weak var citynameText: UITextField!
+    @IBOutlet weak var myTypeWriterLabel: CLTypingLabel!
     
     var weatherManager = WeatherManager()
     
@@ -22,10 +24,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             super.viewDidLoad()
         weatherManager.delegate=self
         citynameText.delegate = self
+        myTypeWriterLabel.text = "날씨보여줍니다!!"
         
         // 키보드에 따라서 화면이 위로 올라가는 코드 1번
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
         
     }
     
